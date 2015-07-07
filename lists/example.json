@@ -1,0 +1,53 @@
+{
+    "type": "label",
+    "label": "Shop Setup",
+    "code": 200,
+    "children": [
+        {
+            "type": "label",
+            "label": "Global Preferences",
+            "code": 210,
+            "children": [
+                {
+                    "type": "label",
+                    "label": "Low Level",
+                    "code": 211,
+                    "children": [
+
+                    ]
+                },
+                {
+                    "type": "label",
+                    "label": "General Settings",
+                    "code": 212,
+                    "children": [
+                        
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "label",
+            "label": "Shipping and Inventory",
+            "code": 220,
+            "children": [
+                {
+                    "type": "label",
+                    "label": "Stock Management",
+                    "code": 221,
+                    "children": [
+
+                    ]
+                },
+                {
+                    "type": "label",
+                    "label": "Carriers",
+                    "code": 222,
+                    "children": [
+
+                    ]
+                }
+            ]
+        }
+    ]
+}

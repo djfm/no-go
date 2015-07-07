@@ -1,0 +1,28 @@
+{
+  "name": "no-go",
+  "version": "1.0.0",
+  "description": "A collaborative checklist tool to help make an informed go / no go decision.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fmdj <fm.de.jouvencel@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.0",
+    "jsx-loader": "^0.13.2",
+    "react": "^0.13.3",
+    "react-router": "^0.13.3",
+    "reqwest": "^1.1.6",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^5.6.15",
+    "babel-loader": "^5.3.1",
+    "css-loader": "^0.15.1",
+    "node-libs-browser": "^0.5.2",
+    "style-loader": "^0.12.3",
+    "stylus-loader": "^1.2.1",
+    "webpack": "^1.10.1"
+  }
+}

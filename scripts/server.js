@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 
 app.use(express.static('dist'));
+app.use('/lists', express.static('lists'));
 
 var server = app.listen(process.env.PORT || process.argv[2] || 3000, function () {
     var host = server.address().address;

@@ -1,38 +1,48 @@
 {
-    "type": "label",
     "label": "Shop Setup",
     "code": 200,
     "children": [
         {
-            "type": "label",
             "label": "Global Preferences",
             "code": 210,
             "children": [
                 {
-                    "type": "label",
                     "label": "Low Level",
                     "code": 211,
                     "children": [
 
+                    ],
+                    "itemsToCheck": [
+                        {"text": "Fill in SMTP parameters with data from Google, try to send yourself an E-Mail", "code": 2111, "author": "fmdj", "revisions": [
+                            {"label": "1.6.0.14", "ok": true, "comments": [
+                                {"author": "fmdj", "text": "Well this is nice!"},
+                                {"author": "tChauviere", "text": "Confirmed."}
+                            ]},
+                            {"label": "1.6.0.13", "ok": false, "comments": [
+                                {"author": "fmdj", "text": "What???"}
+                            ]}
+                        ]},
+                        {"text": "Disable HTML cache, change a template, reload the page, check that it updated.", "code": 2112, "author": "jNadaud", "revisions": [
+                                {"label": "1.6.1.0", "ok": true, "comments": [
+                                    {"author": "fmdj", "text": "Good to know!"}
+                                ]}
+                        ]}
                     ]
                 },
                 {
-                    "type": "label",
                     "label": "General Settings",
                     "code": 212,
                     "children": [
-                        
+
                     ]
                 }
             ]
         },
         {
-            "type": "label",
             "label": "Shipping and Inventory",
             "code": 220,
             "children": [
                 {
-                    "type": "label",
                     "label": "Stock Management",
                     "code": 221,
                     "children": [
@@ -40,7 +50,6 @@
                     ]
                 },
                 {
-                    "type": "label",
                     "label": "Carriers",
                     "code": 222,
                     "children": [

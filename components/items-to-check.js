@@ -8,10 +8,12 @@ export default class ItemsToCheck extends Component {
     }
 
     render () {
+        var listId = this.props.listId;
+
         if (this.props.items) {
             return (
                 <div>
-                    {this.props.items.map(item => {return <ItemToCheck item={item}></ItemToCheck>;})}
+                    {this.props.items.map((item, index) => {return <ItemToCheck listId={listId} key={index} item={item}></ItemToCheck>;})}
                 </div>
             );
         } else {

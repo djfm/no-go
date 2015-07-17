@@ -19,6 +19,14 @@ class ListStore extends EventEmitter {
         }).bind(this));
     }
 
+    getRevisionLabels (listId) {
+        if (!this._lists[listId]) {
+            return [];
+        } else {
+            // TODO: walk the list and extract, then sort all the revision labels.
+        }
+    }
+
     emitChange (listId) {
         this.emit('CHANGE', this.getState(listId));
     }

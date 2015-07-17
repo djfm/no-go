@@ -16,7 +16,7 @@ export default class ItemToCheck extends Component {
                     <span>({this.props.item.author})</span>
                 </div>
                 <div className="revisions">
-                    <Revisions revisions={this.props.item.revisions}></Revisions>
+                    <Revisions listId={this.props.listId} revisions={this.props.item.revisions}></Revisions>
                 </div>
             </div>
         );

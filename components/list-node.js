@@ -18,7 +18,7 @@ var ListNode = React.createClass({
                 {this.props.node.children.map(node => {
                     return <ListNode listId={this.props.listId} depth={this.props.depth + 1} key={node.code} node={node}></ListNode>;
                 })}
-                <ItemsToCheck items={this.props.node.itemsToCheck}></ItemsToCheck>
+                <ItemsToCheck listId={this.props.listId} items={this.props.node.itemsToCheck}></ItemsToCheck>
             </div>
         );
     },

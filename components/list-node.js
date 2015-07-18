@@ -16,9 +16,9 @@ var ListNode = React.createClass({
                 <Editable initialText={this.props.node.code} onChange={this.nodeChanged.bind(this, 'code')}/>&nbsp;-&nbsp;
                 <Editable initialText={this.props.node.label} onChange={this.nodeChanged.bind(this, 'label')}/>
                 {this.props.node.children.map(node => {
-                    return <ListNode listId={this.props.listId} depth={this.props.depth + 1} key={node.code} node={node}></ListNode>;
+                    return <ListNode listId={this.props.listId} depth={this.props.depth + 1} key={node.code} node={node} revisionLabels={this.props.revisionLabels}></ListNode>;
                 })}
-                <ItemsToCheck listId={this.props.listId} items={this.props.node.itemsToCheck}></ItemsToCheck>
+                <ItemsToCheck listId={this.props.listId} items={this.props.node.itemsToCheck} revisionLabels={this.props.revisionLabels} node={this.props.node}></ItemsToCheck>
             </div>
         );
     },

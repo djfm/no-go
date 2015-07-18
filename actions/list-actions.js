@@ -10,5 +10,10 @@ export default {
         dispatcher.dispatch(_.extend({
             actionType: 'NODE_UPDATE'
         }, data));
+    },
+    addItemToCheck (data) {
+        dispatcher.dispatch(_.extend({
+            actionType: 'ADD_ITEM_TO_CHECK'
+        }, data));
     }
 };

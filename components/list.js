@@ -4,6 +4,8 @@ import ListNode from './list-node';
 import listStore from '../stores/list-store';
 import listActions from '../actions/list-actions';
 
+require('../styles/list.styl');
+
 export default React.createClass({
     getInitialState() {
         return {
@@ -22,7 +24,7 @@ export default React.createClass({
         if (!this.state.list) {
             return <span>Loading, please wait...</span>;
         } else {
-            return <ListNode listId={this.state.listId} depth={0} node={this.state.list}></ListNode>;
+            return <ListNode listId={this.state.listId} revisionLabels={this.state.revisionLabels} depth={0} node={this.state.list}></ListNode>;
         }
     },
     _onChange () {

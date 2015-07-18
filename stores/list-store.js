@@ -4,6 +4,8 @@ import dispatcher from '../scripts/dispatcher';
 import {EventEmitter} from 'events';
 import _ from 'underscore';
 
+import listWalker from '../lib/list-walker';
+
 class ListStore extends EventEmitter {
 
     constructor () {
@@ -23,7 +25,7 @@ class ListStore extends EventEmitter {
         if (!this._lists[listId]) {
             return [];
         } else {
-            // TODO: walk the list and extract, then sort all the revision labels.
+            return listWalker.getRevisionLabels(this._lists[listId]);
         }
     }
 
@@ -34,7 +36,8 @@ class ListStore extends EventEmitter {
     getState (listId) {
         return {
             listId: listId,
-            list: this._lists[listId]
+            list: this._lists[listId],
+            revisionLabels: this.getRevisionLabels(listId)
         };
     }
 
@@ -68,6 +71,10 @@ var listStore = new ListStore();
 dispatcher.register(payload => {
     if (payload.actionType === 'NODE_UPDATE') {
         payload.node[payload.property] = payload.newValue;
+        listStore.emitChange(payload.listId);
+    } else if (payload.actionType === 'ADD_ITEM_TO_CHECK') {
+        payload.node.itemsToCheck = payload.node.itemsToCheck || [];
+        payload.node.itemsToCheck.push(payload.item);
         listStore.emitChange(payload.listId);
     }
 });

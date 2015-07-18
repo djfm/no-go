@@ -3,6 +3,8 @@ import Router, {Route, RouteHandler} from 'react-router';
 
 import List from '../components/list';
 
+require('../styles/main.styl');
+
 var App = React.createClass({
     render () {
         return (

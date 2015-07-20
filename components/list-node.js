@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import classNames from 'classnames';
 
 import Editable from './editable';
@@ -9,10 +9,11 @@ import ItemsToCheck from '../components/items-to-check';
 
 require('../styles/list-node.styl');
 
-var ListNode = React.createClass({
+export default class ListNode extends Component {
+
     render () {
         return (
-            <div className = {classNames({node: true, 'indented-node': this.props.depth > 0})}>
+            <div className={classNames({node: true, 'indented-node': this.props.depth > 0})}>
                 <Editable initialText={this.props.node.code} onChange={this.nodeChanged.bind(this, 'code')}/>&nbsp;-&nbsp;
                 <Editable initialText={this.props.node.label} onChange={this.nodeChanged.bind(this, 'label')}/>
                 {this.props.node.children.map(node => {
@@ -21,7 +22,8 @@ var ListNode = React.createClass({
                 <ItemsToCheck listId={this.props.listId} items={this.props.node.itemsToCheck} revisionLabels={this.props.revisionLabels} node={this.props.node}></ItemsToCheck>
             </div>
         );
-    },
+    }
+
     nodeChanged (property, newValue) {
         listActions.updateNode({
             listId: this.props.listId,
@@ -30,6 +32,4 @@ var ListNode = React.createClass({
             newValue
         });
     }
-});
-
-export default ListNode;
+}
